@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('../font/GangofThree.woff2') format('woff2'),
+        url('../font/GangofThree.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Etna';
+    src: url('../font/Etna.woff2') format('woff2'),
+        url('../font/Etna.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    position: relative;
+    font-family: 'Gang of Three';
+    background-image: url('../acceuil/fond.jpg');
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+nav li {
+    display: inline;
+    margin: 5%;
+}
+
+nav img {
+    position: relative;
+    bottom: -15px;
+    width: 10%;
+}
+
+.containeur {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin: 0;
+    margin-block: 0;
+}
+
+.texte {
+    position: absolute;
+    font-size: 200px;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.soleil img {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    z-index: 1;
+}
+
+.montagne {
+    margin-top: 41vh;
+}
+
+.montagne img {
+    position: relative;
+    width: 1600px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.nuage1 img {
+    position: absolute;
+    top: 15vh;
+    left: 18vw;
+    width: 300px;
+    opacity: 0.7;
+    z-index: 3;
+}
+
+.nuage2 img {
+    position: absolute;
+    top: 29vh;
+    right: 19.5vw;
+    width: 270px;
+    opacity: 0.95;
+    z-index: 5;
+}
+
+.nuage3 img {
+    position: absolute;
+    top: 50vh;
+    left: 8vw;
+    width: 400px;
+    opacity: 1;
+    z-index: 5;
+}
+
+.nuage4 img {
+    position: absolute;
+    top: 60vh;
+    right: 3vw;
+    width: 400px;
+    opacity: 1;
+    z-index: 5;
+}
+
+.nuage5 img {
+    position: absolute;
+    top: 5vh;
+    left: -5vw;
+    width: 300px;
+    opacity: 0.3;
+    z-index: 5;
+}
+
+.nuage6 img {
+    position: absolute;
+    top: 10vh;
+    right: -3vw;
+    width: 400px;
+    opacity: 0.5;
+    z-index: 5;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Etna';
+    background-color: #6A84A9;
+    z-index: 6;
+    color: #f5f2ed;
+}
+
+footer a {
+    color: #f5f2ed;
+}

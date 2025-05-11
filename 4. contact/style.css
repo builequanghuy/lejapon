@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('../font/GangofThree.woff2') format('woff2'),
+        url('../font/GangofThree.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Etna';
+    src: url('../../font/Etna.woff2') format('woff2'),
+        url('../../font/Etna.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Etna';
+    background-color: #6A84A9;
+    color: #f5f2ed;
+    height: 3vh;
+}
+
+footer a {
+    color: #f5f2ed;
+}
+
+body {
+    position: relative;
+    font-family: 'Gang of Three';
+    background-image: url('../../img/fond.jpg');
+    margin: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+nav li {
+    display: inline;
+    margin: 5%;
+}
+
+nav img {
+    position: relative;
+    bottom: -15px;
+    width: 10%;
+}
+
+main{
+    position: relative;
+}
+
+#container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 70vh;
+    }
+
+#chefs {
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+.box1 {
+        display: flex;
+        width: 30%;
+        min-height: 50vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: lightblue;
+        border-radius: 10px;
+        background-image: url('papier.png');
+    }
+
+.box1 img {
+    border-radius: 250px;
+}
+
+#entete {
+    font-size: 100px;
+}
