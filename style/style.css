@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Etna';
-    src: url('../../font/Etna.woff2') format('woff2'),
-        url('../../font/Etna.woff') format('woff');
+    src: url('../font/Etna.woff2') format('woff2'),
+        url('../font/Etna.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -100,8 +100,8 @@ p {
 
 .texte {
     position: absolute;
-    font-size: 200px;
-    top: 15vh;
+    font-size: 10vw;
+    top: 20vh;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -114,14 +114,14 @@ p {
     top: 10vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 700px;
+    width: 40%;
     z-index: 1;
 }
 
 .montagne img {
-    position: absolute;
-    top: 38vh;
-    width: 1600px;
+    position: fixed;
+    bottom: 0;
+    width: 90%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -141,7 +141,7 @@ p {
     top: 29vh;
     right: 19.5vw;
     width: 270px;
-    opacity: 0.95;
+    opacity: 0.8;
     z-index: 5;
 }
 
@@ -194,4 +194,100 @@ footer {
 
 footer a {
     color: #f5f2ed;
+}
+
+
+@media only screen and (max-width: 768px) {
+main {
+  width: 100%;
+}
+.containeur {
+  position: relative;
+}
+.texte {
+  position: absolute;
+  font-size: 18vw;
+  top: 20vh;
+}
+
+.navbar {
+  height: 2vh;
+}
+.logo {
+  width: 60px;
+}
+
+.nav-list {
+  width: 100%;
+}
+
+.soleil img {
+  width: 50%;
+}
+
+.montagne img {
+  width: 1000px;
+}
+
+.nuage1 img {
+  width: 200px;
+}
+
+.nuage2 img {
+  width: 250px;
+}
+
+.nuage3 img {
+  width: 300px;
+}
+
+.nuage4 img {
+  width: 240px;
+}
+
+.nuage5 img {
+  width: 200px;
+}
+
+.nuage6 img {
+  width: 200px;
+}
+}
+
+@media only screen and (max-width: 425px) {
+.nuage1 img {
+  display: none;
+}
+
+.nuage2 img {
+  display: none;
+}
+
+.nuage3 img {
+  display: none;
+}
+
+.nuage4 img {
+  display: none;
+}
+
+.nuage5 img {
+  display: none;
+}
+
+.nuage6 img {
+  display: none;
+}
+
+.navbar {
+  height: 1vh;
+}
+
+.soleil img {
+  width: 200px;
+}
+
+.montagne img {
+  width: 1200px;
+}
 }
