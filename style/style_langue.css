@@ -47,22 +47,73 @@ body {
     overflow-x: hidden;
 }
 
-nav {
-    display: flex;
-    text-align: center;
-    justify-content: center;
+.navbar {
+  display: flex;
+  justify-content: center;
+  min-height: 10vh;
 }
 
-nav li {
-    display: inline;
-    margin: 5%;
+.nav-list {
+  width: 80%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-nav img {
+.nav-list > li {
+  position: relative;
+}
+
+.nav-list > li > a {
+  display: block;
+  padding: 14px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-list > li > a:hover {
+  background-color: #444;
+  border-radius: 20px;
+}
+
+.dropdown-content {
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: center;
+}
+
+.logo {
     position: relative;
-    bottom: -15px;
-    width: 10%;
+    width: 100px;
 }
+
 
 main{
     position: relative;
@@ -117,12 +168,27 @@ h2 {
     border: solid black 2px;
 }
 
-
-@media only screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
+.logo {
+    width: 8vw;
+}
+.nav-list {
+    width: 100%;
+}
+.map {
+    top: 2vh;
+    width: 50%;
+}
 }
 
-@media only screen and (min-width: 426px) {
+@media screen and (max-width: 425px) {
+#container {
+    text-align: center;
 }
-
-@media only screen and (max-width: 425px) {
+#demonstration {
+    flex-direction: column;
+}
+.box {
+    width: 100%;
+}
 }
