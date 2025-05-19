@@ -142,12 +142,10 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
     width: 27%;
     height: 35vh;
-    background-image: url('papier.png');
+    background-image: url('../img/papier.png');
 }
-
 
 .box img {
     width: 90%;

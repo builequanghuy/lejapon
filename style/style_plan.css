@@ -129,8 +129,11 @@ main{
     height: 15vh;
     text-align: center;
 }
-
+h1 {
+    margin: 0;
+}
 h2 {
+    margin: 0;
     font-family: 'Etna';
     font-size: 1.5vw;
 }
@@ -150,14 +153,14 @@ h2 {
     font-size: 5vw;
     height: 30vh;
     width: 40%;
-    top: 3vh;
+    top: 10vh;
 }
 h2 {
     font-size: 3vw;
 }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 .main {
     display: flex;
     flex-direction: column;
@@ -173,9 +176,20 @@ h2 {
     position: relative;
     font-size: 16vw;
     top: 0;
-    width: 20vh;
+    width: 100%;
+    left: 0;
+    height: auto;
+}
+h1 {
+    text-align: center;
 }
 h2 {
     display: none;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 }

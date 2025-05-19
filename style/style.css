@@ -90,6 +90,24 @@ body {
     width: 100px;
 }
 
+.burger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 1001;
+}
+
+.logo-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
 .containeur {
     position: relative;
 }
@@ -255,7 +273,7 @@ main {
 }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
 .nuage1 img {
   display: none;
 }
@@ -285,10 +303,64 @@ main {
 }
 
 .soleil img {
-  width: 200px;
+  width: 400px;
+  top: 20vh;
 }
 
 .montagne img {
-  width: 1200px;
+  position: absolute;
+  width: 1400px;
+  top: 35vh;
+}
+
+.texte {
+  top: 20vh;
+}
+
+.navbar {
+    position: relative;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .nav-list {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+.logo-wrapper {
+  display: block;
 }
 }
