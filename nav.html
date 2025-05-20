@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_nav.css">
+</head>
+<body>
+    <nav class="navbar">
+            <div class="burger" id="burger">
+                &#9776;
+            </div>
+            <a href="index.html" class="logo-wrapper">
+                <img src="img/logo.png" class="logo">
+            </a>
+            <ul class="nav-list" id="nav-list">
+                <li class="dropdown">
+                    <a href="#">Pays</a>
+                    <ul class="dropdown-content">
+                        <li><a href="pages/plan.html">Plan</a></li>
+                        <li><a href="pages/langue.html">Langue</a></li>
+                        <li><a href="pages/histoire.html">Histoire</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Culture</a>
+                    <ul class="dropdown-content">
+                        <li><a href="pages/gastro.html">Gastronomie</a></li>
+                        <li><a href="pages/costume.html">Costumes</a></li>
+                        <li><a href="pages/martial.html">Arts martiaux</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html"><img src="img/logo.png" class="logo"></a></li>
+                <li class="dropdown">
+                    <a href="#">Tendances</a>
+                    <ul class="dropdown-content">
+                        <li><a href="pages/manga.html">Manga</a></li>
+                        <li><a href="pages/jpop.html">JPOP</a></li>
+                        <li><a href="pages/cliche.html">Clichés</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">À propos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="pages/quizz.html">Quizz</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            const burger = document.getElementById('burger');
+            const navList = document.getElementById('nav-list');
+
+            burger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            });
+        </script>
+</body>
+</html>

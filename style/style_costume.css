@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('../font/GangofThree.woff2') format('woff2'),
+        url('../font/GangofThree.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Etna';
+    src: url('../font/Etna.woff2') format('woff2'),
+        url('../font/Etna.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    position: relative;
+    font-family: 'Gang of Three';
+    background-image: url('../../img/fond.jpg');
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+}
+
+.homme,.femme {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: lightblue;
+}
+
+.personnes {
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-40%);
+}
+
+.entete {
+    width: 20%;
+    height: 30vh;
+    background-image: url('../img/backgroundtexte.png');
+    background-size: cover;
+}
