@@ -7,24 +7,214 @@
     <link rel="stylesheet" href="../style/style_gastro.css">
 </head>
 <body>
-    <div class="table">
-        <img src="../img/plat1.png" class="plat plat1">
-        <img src="../img/plat2.png" class="plat plat2">
-        <img src="../img/plat3.png" class="plat plat3">
-        <img src="../img/plat4.png" class="plat plat4">
-        <img src="../img/plat5.png" class="plat plat5">
-        <img src="../img/plat6.png" class="plat plat6">
-        <img src="../img/plat7.png" class="plat plat7">
-        <img src="../img/plat8.png" class="plat plat8">
-    </div>
-    <div class="texte">
-        <h1>Gastronomie</h1>
-        <h2>Udon & Soba (うどん・そば)</h3>
-        <ul>
-            <li>Udon : nouilles épaisses à base de farine de blé.</li>
-            <li>Soba : nouilles fines à base de sarrasin.</li>
-            <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+    <nav class="navbar">
+        <!--menu burger pour les portables-->
+        <div class="burger" id="burger">&#9776;</div>
+        <a href="../index.html" class="logo-wrapper">
+            <img src="../img/logo.png" class="logo" />
+        </a>
+        <!--menu pour les ordinateurs et tablettes-->
+        <ul class="nav-list" id="nav-list">
+            <li class="dropdown">
+                <a class="main-menu" href="#">Pays</a>
+                <ul class="dropdown-content">
+                    <li class="return">Menu</li>
+                    <li><a href="plan.html">Plan</a></li>
+                    <li><a href="langue.html">Langue</a></li>
+                    <li><a href="histoire.html">Histoire</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="main-menu" href="#">Culture</a>
+                <ul class="dropdown-content">
+                    <li class="return">Menu</li>
+                    <li><a href="gastro.html">Gastronomie</a></li>
+                    <li><a href="costume.html">Costumes</a></li>
+                    <li><a href="martial.html">Arts martiaux</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../index.html"><img src="../img/logo.png" class="logo" /></a>
+            </li>
+            <li class="dropdown">
+                <a class="main-menu" href="#">Tendances</a>
+                <ul class="dropdown-content">
+                    <li class="return">Menu</li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="jpop.html">JPOP</a></li>
+                    <li><a href="cliche.html">Clichés</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="main-menu" href="#">À propos</a>
+                <ul class="dropdown-content">
+                    <li class="return">Menu</li>
+                    <li><a href="quizz.html">Quizz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </li>
         </ul>
-    </div>
+    </nav>
+    <script>
+        const burger = document.getElementById("burger");
+        const navList = document.getElementById("nav-list");
+
+        burger.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        document
+        .querySelectorAll(".dropdown-content")
+        .forEach((d) => d.classList.remove("show"));
+        });
+
+        document.querySelectorAll(".main-menu").forEach((menu) => {
+        menu.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Close all dropdowns first
+        document
+        .querySelectorAll(".dropdown-content")
+        .forEach((d) => {
+            d.classList.remove("show")
+            d.classList.add("hide")
+        });
+
+        // Find the sibling dropdown-content within the same wrapper
+        const dropdown = this.nextElementSibling;
+        if (dropdown && dropdown.classList.contains("dropdown-content")) {
+        dropdown.classList.add("show");
+        dropdown.classList.remove("hide");
+        }
+        });
+        });
+
+        // Close dropdown on return click
+        document
+        .querySelectorAll(".dropdown-content .return")
+        .forEach((returnItem) => {
+            returnItem.addEventListener("click", function () {
+            const dropdown = this.closest(".dropdown-content");
+            if (dropdown) {
+                dropdown.classList.add("hide");
+                dropdown.classList.remove("show");
+            }
+            });
+        });
+    </script>
+    <main>
+        <div id="table">
+            <div id="cercle" onclick="plusPlat(1); tournerTable()">Plat suivant</div>
+            <img src="../img/plat1.png" class="plat plat1">
+            <img src="../img/plat2.png" class="plat plat2">
+            <img src="../img/plat3.png" class="plat plat3">
+            <img src="../img/plat4.png" class="plat plat4">
+            <img src="../img/plat5.png" class="plat plat5">
+            <img src="../img/plat6.png" class="plat plat6">
+            <img src="../img/plat7.png" class="plat plat7">
+            <img src="../img/plat8.png" class="plat plat8">
+        </div>
+        <div class="texte">
+            <h1>Gastronomie</h1>
+            <div class="content">
+                <h2>Udon & Soba 1 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 2 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 3 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 4 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 5 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 6 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 7 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Udon & Soba 8 (うどん・そば)</h2>
+                <ul>
+                    <li>Udon : nouilles épaisses à base de farine de blé.</li>
+                    <li>Soba : nouilles fines à base de sarrasin.</li>
+                    <li>Servies chaudes ou froides selon la saison, accompagnées de sauce soja, tempura ou oignons verts.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script>
+        let i;
+        let platIndice=1;
+        afficherPlat(platIndice);
+
+        cercle = document.getElementById("cercle");
+
+
+        function plusPlat(n) {
+            afficherPlat(platIndice += n);
+        }
+
+        function afficherPlat(n) {
+            plats = document.getElementsByClassName("content");
+            if (n>=plats.length) {platIndice=0}
+            for (i=0;i<plats.length;i++) {
+                plats[i].style.display = "none";
+            }
+            plats[n-1].style.display = "block"
+        }
+
+        let currentRotation = 0;
+        function tournerTable() {
+            
+            currentRotation += 45;
+            const table = document.getElementById("table");
+            table.style.transform = 'rotate(${currentRotation}deg)';
+            /*
+            plats = document.getElementsByClassName("plat");
+            for (i=0; i<plats.length; i++) {
+                plats[i].style.transform = "rotate(${-angle}deg)";
+            }*/
+            console.log(table);
+        }
+    </script>
 </body>
 </html>

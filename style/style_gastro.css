@@ -16,22 +16,142 @@
     font-display: swap;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  min-height: 10vh;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  list-style-type: none;
+}
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-list > li > a {
+  display: block;
+  padding: 14px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-list > li > a:hover {
+  text-shadow: 0px 0px 2px black;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  min-width: 200px;
+  z-index: 500;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #A33C27;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  position: relative;
+  width: 100px;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.logo-wrapper {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.return {
+  display: none;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Etna';
+    background-color: #6A84A9;
+    color: #f5f2ed;
+    height: 3vh;
+}
+
+footer a {
+    color: #f5f2ed;
+}
+
+
 body {
     position: relative;
     font-family: 'Gang of Three';
     background-image: url('../../img/fond.jpg');
     overflow: hidden;
+
+}
+
+main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.table {
+#table {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 40vw;
+    height: 40vw;
     background-image: url('../img/table.png');
     background-size: cover;
+    transform: rotate(45deg);
 }
 
 .texte {
@@ -86,24 +206,41 @@ h2 {
 
 .plat5 {
     width: 23%;
-    bottom: 14%;
-    right: 14%;
+    top: 62%;
+    left: 65%;
 }
 
 .plat6 {
     width: 30%;
-    bottom: 10%;
+    top: 75%;
     right: 35%;
 }
 
 .plat7 {
     width: 22%;
-    bottom: 20%;
-    right: 65%;
+    top: 64%;
+    left: 13%;
 }
 
 .plat8 {
     width: 23%;
-    bottom: 39%;
-    right: 72%;
+    top: 39%;
+    left: 3%;
+}
+
+#cercle {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: #A33C27;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    cursor: pointer;
 }
