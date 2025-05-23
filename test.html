@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: tomato; margin: 20px;"></div>
+    <button onclick="rotateBox()">Xoay 45 độ</button>
+    <script>
+        let currentRotation = 0;
+
+        function rotateBox() {
+        currentRotation += 45;
+        const box = document.getElementById("box");
+        box.style.transform = `rotate(${currentRotation}deg)`;
+        }
+    </script>
+</body>
+</html>

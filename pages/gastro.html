@@ -102,6 +102,7 @@
         });
     </script>
     <main>
+        <h1 class="header_mobile">Gastronomie</h1>
         <div id="table">
             <div id="cercle" onclick="plusPlat(1); tournerTable()">Plat suivant</div>
             <img src="../img/plat1.png" class="plat plat1">
@@ -184,6 +185,7 @@
     <script>
         let i;
         let platIndice=1;
+        let currentRotation = 0;
         afficherPlat(platIndice);
 
         cercle = document.getElementById("cercle");
@@ -199,21 +201,19 @@
             for (i=0;i<plats.length;i++) {
                 plats[i].style.display = "none";
             }
-            plats[n-1].style.display = "block"
+            plats[n-1].style.display = "block";
         }
-
-        let currentRotation = 0;
         function tournerTable() {
-            
             currentRotation += 45;
             const table = document.getElementById("table");
-            table.style.transform = 'rotate(${currentRotation}deg)';
-            /*
+            const cercle = document.getElementById("cercle")
+            table.style.transform = `rotate(${currentRotation}deg)`;
             plats = document.getElementsByClassName("plat");
+            cercle.style.transform = `rotate(-${currentRotation}deg)`
             for (i=0; i<plats.length; i++) {
-                plats[i].style.transform = "rotate(${-angle}deg)";
-            }*/
-            console.log(table);
+                plats[i].style.transform = `rotate(-${currentRotation}deg)`;
+            }
+            console.log(currentRotation);
         }
     </script>
 </body>

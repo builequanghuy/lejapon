@@ -151,7 +151,7 @@ main {
     height: 40vw;
     background-image: url('../img/table.png');
     background-size: cover;
-    transform: rotate(45deg);
+    transition: 1s;
 }
 
 .texte {
@@ -178,6 +178,8 @@ h2 {
 .plat {
     position: absolute;
     width: 20%;
+    transition: 1s;
+    padding: 1%;
 }
 
 .plat1 {
@@ -240,7 +242,109 @@ h2 {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 200%;
+    font-size: 2vw;
     text-align: center;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition: 1s;
+}
+.header_mobile {
+  display: none;
+}
+@media screen and (max-width:426px) {
+  .navbar {
+    position: relative;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .nav-list {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .return {
+    display: block;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown .dropdown-content.show {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transform: unset;
+    z-index: 1000;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .show {
+    animation: slideInRight;
+    animation-duration: 1s;
+  }
+
+  .hide {
+    animation: slideOutRight;
+    animation-duration: 1s;
+  }
+
+  .burger {
+    display: block;
+  }
+  .logo-wrapper {
+    display: block;
+  }
+  #table {
+    width: 80vw;
+    height: 80vw;
+  }
+  main {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+  }
+  .texte {
+    width: 90vw;
+  }
+  .content li {
+    font-size: 5vw;
+  }
+  .texte h1 {
+    display: none;
+  }
+  .texte h2 {
+    font-size: 5vw;
+  }
+  .header_mobile {
+    display: block;
+    font-size: 7vw;
+    margin: 0;
+  }
 }
