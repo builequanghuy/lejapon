@@ -16,6 +16,12 @@
     font-display: swap;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Gang of Three';
+}
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -116,134 +122,38 @@ body {
 
 .container {
     display: flex;
-    height: 80vh;
+    justify-content: space-between;
+    width: 100%;
+    height: 70vh;
+}
+
+.judo {
+    width: 45%;
+    display: flex;
     align-items: center;
-}
-.milieu {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.homme,.femme {
-    position: relative;
-    width: 40%;
-    height: 100%;
+    justify-content: center;
 }
 
-.personnes {
-    position: absolute;
-    width: 30%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-40%);
-}
-
-.entete {
-    width: 20%;
-    height: 30vh;
-    background-image: url('../img/backgroundtexte.png');
-    background-size: cover;
+.samurai {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image {
-  position: absolute;
+    position: relative;
+    width: 70%;
 }
-
-.kimohom {
-  width: 50%;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+.texte {
+    width: 20%;
 }
-
-.parahom {
-  width: 40%;
-  top: 5%;
-  left: 5%;
-}
-
-.venthom {
-  width: 20%;
-  top: 40%;
-  right: 7%;
-}
-
-.homme .sandal {
-  width: 25%;
-  top: 75%;
-  left: 35%;
-}
-
-.sachom {
-  width: 20%;
-  top: 60%;
-  left: 15%;
-}
-
-.kimofem {
-  width: 50%;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.parafem {
-  width: 40%;
-  top: 5%;
-  right: 5%;
-}
-
-.ventfem {
-  width: 20%;
-  top: 40%;
-  left: 7%;
-}
-
-.femme .sandal {
-  width: 25%;
-  top: 77%;
-  right: 35%;
-  transform: scaleX(-100%);
-}
-
-.sacfem {
-  width: 15%;
-  top: 50%;
-  right: 15%;
-}
-
 .entete {
-  display: flex;
-  position: relative;
-  top: -10vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    font-size: 5vw;
+    text-align: center;
 }
-.entete div {
-  font-size: 3vw;
-}
-
 @media screen and (max-width: 769px) {
-  .sacfem {
-    top: 40%;
-  }
-  .sachom {
-    top: 45%;
-  }
-  .homme .sandal {
-    top: 55%;
-  }
-  .femme .sandal {
-    top: 57%;
-  }
-  .personnes {
-    width: 40%;
-    bottom: 5vh;
-  }
-  .navbar {
+    .navbar {
     height: 2vh;
   }
   .logo {
@@ -255,7 +165,7 @@ body {
 }
 
 @media screen and (max-width: 426px) {
-  .navbar {
+    .navbar {
     position: relative;
     justify-content: space-between;
     padding: 10px 20px;
@@ -327,82 +237,19 @@ body {
 
   .container {
     flex-direction: column;
+    height: 80vh;
+    align-items: center;
+  }
+  .judo {
+    width: 90%;
+  }
+  .samurai {
+    width: 90%;
   }
   .entete {
-    flex-direction: row;
-    top: 0;
-    height: 5vh;
-  }
-  .entete div {
-    font-size: 6vw;
-  }
-  .personnes {
-    width: auto;
-    height: 20vh;
-    bottom: unset;
+    font-size: 10vw;
     position: relative;
-    left: 5%;
-    transform: unset;
-  }
-  .homme {
-    width: 100%;
-    height: 30vh;
-  }
-  .femme {
-    width: 100%;
-    height: 30vh;
-  }
-  .milieu {
-    width: 100%;
-    height: 30vh;
-  }
-  .kimohom {
-    top: 10%;
-    width: 35%;
-  }
-  .parahom {
-    width: 30%;
-    top: 0;
-    left: 15%;
-  }
-  .venthom {
-    width: 8%;
-    top: 60%;
-    right: 30%;
-  }
-  .homme .sandal {
-    width: 15%;
-    top: 82%;
-    left: 42%;
-  }
-  .sachom {
-    width: 10%;
-    top: 60%;
-    left: 28%;
+    top: -42vh;
   }
 
-  .kimofem {
-    top: 10%;
-    width: 35%;
-  }
-  .parafem {
-    width: 30%;
-    top: 0;
-    right: 15%;
-  }
-  .ventfem {
-    width: 8%;
-    top: 60%;
-    left: 30%;
-  }
-  .femme .sandal {
-    width: 15%;
-    top: 90%;
-    left: 45%;
-  }
-  .sacfem {
-    width: 8%;
-    top: 60%;
-    right: 28%;
-  }
 }

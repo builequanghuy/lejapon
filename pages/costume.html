@@ -7,13 +7,130 @@
     <link rel="stylesheet" href="../style/style_costume.css">
 </head>
 <body>
-    <div class="container"">
-        <div class="homme"></div>
-        <div class="entete">
-            <div></div>
+    <nav class="navbar">
+            <!--menu burger pour les portables-->
+            <div class="burger" id="burger">&#9776;</div>
+            <a href="../index.html" class="logo-wrapper">
+                <img src="../img/logo.png" class="logo" />
+            </a>
+            <!--menu pour les ordinateurs et tablettes-->
+            <ul class="nav-list" id="nav-list">
+                <li class="dropdown">
+                    <a class="main-menu" href="#">Pays</a>
+                    <ul class="dropdown-content">
+                        <li class="return">Menu</li>
+                        <li><a href="plan.html">Plan</a></li>
+                        <li><a href="langue.html">Langue</a></li>
+                        <li><a href="histoire.html">Histoire</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="main-menu" href="#">Culture</a>
+                    <ul class="dropdown-content">
+                        <li class="return">Menu</li>
+                        <li><a href="gastro.html">Gastronomie</a></li>
+                        <li><a href="costume.html">Costumes</a></li>
+                        <li><a href="martial.html">Arts martiaux</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../index.html"><img src="../img/logo.png" class="logo" /></a>
+                </li>
+                <li class="dropdown">
+                    <a class="main-menu" href="#">Tendances</a>
+                    <ul class="dropdown-content">
+                        <li class="return">Menu</li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="jpop.html">JPOP</a></li>
+                        <li><a href="cliche.html">Clichés</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="main-menu" href="#">À propos</a>
+                    <ul class="dropdown-content">
+                        <li class="return">Menu</li>
+                        <li><a href="quizz.html">Quizz</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            const burger = document.getElementById("burger");
+            const navList = document.getElementById("nav-list");
+
+            burger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => d.classList.remove("show"));
+            });
+
+            document.querySelectorAll(".main-menu").forEach((menu) => {
+            menu.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Close all dropdowns first
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => {
+                d.classList.remove("show")
+                d.classList.add("hide")
+            });
+
+            // Find the sibling dropdown-content within the same wrapper
+            const dropdown = this.nextElementSibling;
+            if (dropdown && dropdown.classList.contains("dropdown-content")) {
+            dropdown.classList.add("show");
+            dropdown.classList.remove("hide");
+            }
+            });
+        });
+
+        // Close dropdown on return click
+        document
+        .querySelectorAll(".dropdown-content .return")
+        .forEach((returnItem) => {
+          returnItem.addEventListener("click", function () {
+            const dropdown = this.closest(".dropdown-content");
+            if (dropdown) {
+              dropdown.classList.add("hide");
+              dropdown.classList.remove("show");
+            }
+          });
+        });
+        </script>
+    <main>
+        <div class="container"">
+            <div class="homme">
+                <img src="../img/kimohom.png" alt="" class="image kimohom">
+                <img src="../img/parahom.png" alt="" class="image parahom">
+                <img src="../img/sachom.png" alt="" class="image sachom">
+                <img src="../img/sandal.png" alt="" class="image sandal">
+                <img src="../img/venthom.png" alt="" class="image venthom">
+            </div>
+            <div class="milieu">
+                <img src="../img/personnes.png" alt="" class="personnes">
+                <div class="entete">
+                    <div>C</div>
+                    <div>O</div>
+                    <div>S</div>
+                    <div>T</div>
+                    <div>U</div>
+                    <div>M</div>
+                    <div>E</div>
+                    <div>S</div>
+                </div>
+            </div>
+            <div class="femme">
+                <img src="../img/kimofem.png" alt="" class="image kimofem">
+                <img src="../img/parafem.png" alt="" class="image parafem">
+                <img src="../img/sacfem.png" alt="" class="image sacfem">
+                <img src="../img/sandal.png" alt="" class="image sandal">
+                <img src="../img/ventfem.png" alt="" class="image ventfem">
+            </div>
         </div>
-        <div class="femme"></div>
-    </div>
-    <img src="../img/personnes.png" alt="" class="personnes">
+    </main>
 </body>
 </html>
