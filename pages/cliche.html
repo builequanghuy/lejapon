@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliche</title>
+    <link rel="stylesheet" href="../style/style_cliche.css">
 </head>
 <body>
     <nav class="navbar">
-            <ul class="nav-list">
+            <!--menu burger pour les portables-->
+            <div class="burger" id="burger">&#9776;</div>
+            <a href="../index.html" class="logo-wrapper">
+                <img src="../img/logo.png" class="logo" />
+            </a>
+            <!--menu pour les ordinateurs et tablettes-->
+            <ul class="nav-list" id="nav-list">
                 <li class="dropdown">
-                    <a href="#">Pays</a>
+                    <a class="main-menu" href="#">Pays</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="plan.html">Plan</a></li>
                         <li><a href="langue.html">Langue</a></li>
                         <li><a href="histoire.html">Histoire</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
-                    <a href="#">Culture</a>
+                    <a class="main-menu" href="#">Culture</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="gastro.html">Gastronomie</a></li>
                         <li><a href="costume.html">Costumes</a></li>
                         <li><a href="martial.html">Arts martiaux</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html"><img src="img/logo.png" class="logo"></a></li>
+                <li>
+                    <a href="../index.html"><img src="../img/logo.png" class="logo" /></a>
+                </li>
                 <li class="dropdown">
-                    <a href="#">Tendances</a>
+                    <a class="main-menu" href="#">Tendances</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="manga.html">Manga</a></li>
                         <li><a href="jpop.html">JPOP</a></li>
                         <li><a href="cliche.html">Clichés</a></li>
@@ -36,13 +47,119 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#">À propos</a>
+                    <a class="main-menu" href="#">À propos</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="quizz.html">Quizz</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </li>
             </ul>
-        </nav>
+    </nav>
+        <script>
+            const burger = document.getElementById("burger");
+            const navList = document.getElementById("nav-list");
+
+            burger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => d.classList.remove("show"));
+            });
+
+            document.querySelectorAll(".main-menu").forEach((menu) => {
+            menu.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Close all dropdowns first
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => {
+                d.classList.remove("show")
+                d.classList.add("hide")
+            });
+
+            // Find the sibling dropdown-content within the same wrapper
+            const dropdown = this.nextElementSibling;
+            if (dropdown && dropdown.classList.contains("dropdown-content")) {
+            dropdown.classList.add("show");
+            dropdown.classList.remove("hide");
+            }
+            });
+        });
+
+        // Close dropdown on return click
+        document
+        .querySelectorAll(".dropdown-content .return")
+        .forEach((returnItem) => {
+          returnItem.addEventListener("click", function () {
+            const dropdown = this.closest(".dropdown-content");
+            if (dropdown) {
+              dropdown.classList.add("hide");
+              dropdown.classList.remove("show");
+            }
+          });
+        });
+    </script>
+    <main>
+        <div class="entete">Cliches</div>
+        <div class="view">
+            <div class="prev" onclick="plusSlides(-1)"><img src="../img/fleche.png"></div>
+            <div class="box1 box">
+                <div class="texte">Les Japonais sont tous polis et très sérieux au travail</div>
+                <img src="../img/cliche1.png" alt="">
+            </div>
+            <div class="box2 box">
+                <div class="texte">Tous les Japonais font du drift comme dans Fast and Furious: Tokyo Drift</div>
+                <img src="../img/cliche2.png" alt="">
+            </div>
+            <div class="box3 box">
+                <div class="texte">Les Japonais vivent dans des cafés internet</div>
+                <img src="../img/cliche3.png" alt="">
+            </div>
+            <div class="next" onclick="plusSlides(1)"><img src="../img/fleche.png"></div>
+        </div>
+        <div>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+        let slideIndex=1;
+        if (window.matchMedia("(max-width:426px)").matches) {
+            showSlides(slideIndex);
+        }
+
+        window.addEventListener("resize", function() {
+            if (window.matchMedia("(max-width:426px)").matches) {
+            showSlides(slideIndex);
+            }
+        });
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n)
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n)
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("box");
+            let dots = document.getElementsByClassName("dot");
+            if (n>slides.length) {slideIndex=1}
+            if (n<1) {slideIndex=slides.length}
+            for (i=0; i<slides.length; i++) {
+                slides[i].style.display="none";
+            }
+            for (i=0; i<dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active","");
+            }
+            slides[slideIndex-1].style.display="flex";
+            dots[slideIndex-1].className+=" active"
+        }
+    </script>
+    </main>
 </body>
 </html>

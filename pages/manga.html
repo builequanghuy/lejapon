@@ -3,32 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Manga</title>
+    <link rel="stylesheet" href="../style/style_manga.css">
 </head>
 <body>
     <nav class="navbar">
-            <ul class="nav-list">
+            <!--menu burger pour les portables-->
+            <div class="burger" id="burger">&#9776;</div>
+            <a href="../index.html" class="logo-wrapper">
+                <img src="../img/logo.png" class="logo" />
+            </a>
+            <!--menu pour les ordinateurs et tablettes-->
+            <ul class="nav-list" id="nav-list">
                 <li class="dropdown">
-                    <a href="#">Pays</a>
+                    <a class="main-menu" href="#">Pays</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="plan.html">Plan</a></li>
                         <li><a href="langue.html">Langue</a></li>
                         <li><a href="histoire.html">Histoire</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
-                    <a href="#">Culture</a>
+                    <a class="main-menu" href="#">Culture</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="gastro.html">Gastronomie</a></li>
                         <li><a href="costume.html">Costumes</a></li>
                         <li><a href="martial.html">Arts martiaux</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html"><img src="img/logo.png" class="logo"></a></li>
+                <li>
+                    <a href="../index.html"><img src="../img/logo.png" class="logo" /></a>
+                </li>
                 <li class="dropdown">
-                    <a href="#">Tendances</a>
+                    <a class="main-menu" href="#">Tendances</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="manga.html">Manga</a></li>
                         <li><a href="jpop.html">JPOP</a></li>
                         <li><a href="cliche.html">Clichés</a></li>
@@ -36,13 +47,76 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#">À propos</a>
+                    <a class="main-menu" href="#">À propos</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="quizz.html">Quizz</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </li>
             </ul>
-        </nav>
+    </nav>
+        <script>
+            const burger = document.getElementById("burger");
+            const navList = document.getElementById("nav-list");
+
+            burger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => d.classList.remove("show"));
+            });
+
+            document.querySelectorAll(".main-menu").forEach((menu) => {
+            menu.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Close all dropdowns first
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => {
+                d.classList.remove("show")
+                d.classList.add("hide")
+            });
+
+            // Find the sibling dropdown-content within the same wrapper
+            const dropdown = this.nextElementSibling;
+            if (dropdown && dropdown.classList.contains("dropdown-content")) {
+            dropdown.classList.add("show");
+            dropdown.classList.remove("hide");
+            }
+            });
+        });
+
+        // Close dropdown on return click
+        document
+        .querySelectorAll(".dropdown-content .return")
+        .forEach((returnItem) => {
+          returnItem.addEventListener("click", function () {
+            const dropdown = this.closest(".dropdown-content");
+            if (dropdown) {
+              dropdown.classList.add("hide");
+              dropdown.classList.remove("show");
+            }
+          });
+        });
+    </script>
+    <main>
+        <img src="../img/dec.png" class="dec">
+        <div class="box">
+            <div class="box1">
+                <img src="../img/chat1.png" alt="" class="chat1">
+                <img src="../img/man.png" alt="" class="man">
+            </div>
+            <div class="box2">
+                <div class="entete">Manga</div>
+                <img src="../img/manga.png" alt="" class="manga">
+            </div>
+        </div>
+        <div class="box3">
+            <img src="../img/chat2.png" alt="" class="chat2">
+            <img src="../img/chat3.png" alt="" class="chat3">
+        </div>
+    </main>
 </body>
 </html>

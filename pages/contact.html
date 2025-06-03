@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style_contact.css">
 </head>
 <body>
     <nav class="navbar">
-            <ul class="nav-list">
+            <!--menu burger pour les portables-->
+            <div class="burger" id="burger">&#9776;</div>
+            <a href="../index.html" class="logo-wrapper">
+                <img src="../img/logo.png" class="logo" />
+            </a>
+            <!--menu pour les ordinateurs et tablettes-->
+            <ul class="nav-list" id="nav-list">
                 <li class="dropdown">
-                    <a href="#">Pays</a>
+                    <a class="main-menu" href="#">Pays</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="plan.html">Plan</a></li>
                         <li><a href="langue.html">Langue</a></li>
                         <li><a href="histoire.html">Histoire</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Culture</a>
+                    <a class="main-menu" href="#">Culture</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="gastro.html">Gastronomie</a></li>
                         <li><a href="costume.html">Costumes</a></li>
                         <li><a href="martial.html">Arts martiaux</a></li>
                     </ul>
                 </li>
-                <li><a href="../index.html"><img src="../img/logo.png" class="logo"></a></li>
+                <li>
+                    <a href="../index.html"><img src="../img/logo.png" class="logo" /></a>
+                </li>
                 <li class="dropdown">
-                    <a href="#">Tendances</a>
+                    <a class="main-menu" href="#">Tendances</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="manga.html">Manga</a></li>
                         <li><a href="jpop.html">JPOP</a></li>
                         <li><a href="cliche.html">Clichés</a></li>
@@ -36,29 +47,77 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#">À propos</a>
+                    <a class="main-menu" href="#">À propos</a>
                     <ul class="dropdown-content">
+                        <li class="return">Menu</li>
                         <li><a href="quizz.html">Quizz</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </li>
             </ul>
-        </nav>
+    </nav>
+        <script>
+            const burger = document.getElementById("burger");
+            const navList = document.getElementById("nav-list");
+
+            burger.addEventListener("click", () => {
+            navList.classList.toggle("active");
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => d.classList.remove("show"));
+            });
+
+            document.querySelectorAll(".main-menu").forEach((menu) => {
+            menu.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Close all dropdowns first
+            document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => {
+                d.classList.remove("show")
+                d.classList.add("hide")
+            });
+
+            // Find the sibling dropdown-content within the same wrapper
+            const dropdown = this.nextElementSibling;
+            if (dropdown && dropdown.classList.contains("dropdown-content")) {
+            dropdown.classList.add("show");
+            dropdown.classList.remove("hide");
+            }
+            });
+        });
+
+        // Close dropdown on return click
+        document
+        .querySelectorAll(".dropdown-content .return")
+        .forEach((returnItem) => {
+          returnItem.addEventListener("click", function () {
+            const dropdown = this.closest(".dropdown-content");
+            if (dropdown) {
+              dropdown.classList.add("hide");
+              dropdown.classList.remove("show");
+            }
+          });
+        });
+    </script>
     <main>
-        <div id="container">
-            <img src="dectop.png" alt="" id="topleft">
-            <img src="dectop.png" alt="" id="topright">
-            <img src="decbot.png" alt="" id="botleft">
-            <img src="decbot.png" alt="" id="botright">
-            <div id="distance"></div>
-            <div id="chefs">
+        <div class="container">
+            <img src="../img/dectop.png" alt="" class="topleft">
+            <img src="../img/dectop.png" alt="" class="topright">
+            <img src="../img/decbot.png" alt="" class="botleft">
+            <img src="../img/decbot.png" alt="" class="botright">
+            <div class="distance"></div>
+            <div class="chefs">
                 <div class="box1">
                     <div class="box2">
-                        <div class="box3" id="chef"></div>
+                        <div class="box3 chef">
+                            <div class="texte">Chef du projet</div>
+                        </div>
                     </div>
-                    <h1>Le-Quang-Huy BUI</h1>
+                    <h1>BUI Le-Quang-Huy</h1>
                 </div>
-                <div id="entete">
+                <div class="entete">
                     <p>C</p>
                     <p>O</p>
                     <p>N</p>
@@ -69,14 +128,16 @@
                 </div>
                 <div class="box1">
                     <div class="box2">
-                        <div class="box3" id="client"></div>
+                        <div class="box3 client">
+                            <div class="texte">Client</div>
+                        </div>
                     </div>
                     <h1>JACQUART Louison</h1>
                 </div>
             </div>
-            <div id="relecteurs">
-                <h2>Relecteur 1: Prénom Nom</h2>
-                <h2>Relecteur 2: Prénom Nom</h2>
+            <div class="relecteurs">
+                <h2>Relecteur 1: KARIK Kaan</h2>
+                <h2>Relecteur 2: OUVRARD Jules</h2>
             </div>
         </div>
     </main>
